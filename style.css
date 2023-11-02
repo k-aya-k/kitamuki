@@ -1,0 +1,490 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(./img/back.jpg);
+    background-size: contain;
+    z-index: -1;
+    display: flex;
+    justify-content: right;
+}
+
+main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section {
+    width: 80%;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+h1 {
+    width: 100%;
+    font-size: 56px;
+    color: navy;
+    border-bottom: 2px solid orangered;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 32px;
+    margin: 32px;
+}
+
+p {
+    font-size: 24px;
+    line-height: 1.5em;
+
+}
+
+.box {
+    margin-bottom: 5%;
+}
+
+/* header side*/
+.header {
+    width: 100vw;
+    height: 100vh;
+    background: skyblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 2s;
+    z-index: 9999;
+}
+
+.titlebox {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: titleAnime 2s 1 ease;
+}
+
+@keyframes titleAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.titlebox img {
+    width: 30%;
+}
+
+.sidebox,
+.navi,
+.harowa,
+.covicbox {
+    width: 90%;
+    margin: 10% 0;
+    display: none;
+}
+
+.sidebox img {
+    width: 90%;
+}
+
+.navi,
+.harowa,
+.covicbox {
+    text-align: center;
+}
+
+.coviccontent a {
+    text-decoration: none;
+    color: red;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 16px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+}
+
+.navi ul li a {
+    font-size: 32px;
+    font-weight: bold;
+    color: navy;
+
+}
+
+
+/* ローディング後の画面↓ */
+.active {
+    display: inline;
+    animation: sidecontentAnime 2s 1 ease;
+}
+
+@keyframes sidecontentAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.side {
+    width: 20%;
+    height: 100vh;
+    background: skyblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 10px 15px 15px rgba(243, 241, 241, 0.5) inset;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: sideAnime 2s 1 linear;
+}
+
+@keyframes sideAnime {
+    from {
+        opacity: 1;
+        width: 100%;
+    }
+
+    to {
+        opacity: 1;
+        width: 20%;
+    }
+}
+
+/* 全画面から左に縮小 */
+.none {
+    animation: titleNoneAnime 2s 1 ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes titleNoneAnime {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20);
+        display: none;
+    }
+}
+
+/* ローディング後の画面↑ */
+
+/* school */
+/* 学校紹介 */
+.textbox p {
+    display: inline;
+    flex-direction: column;
+    line-height: 2em;
+}
+
+/* 卒業生の声 */
+.voice {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+    margin-top: 24px;
+}
+
+.voice_title {
+    width: 20%;
+    padding: 24px;
+}
+
+.voice_title img {
+    width: 100%;
+}
+
+/* 吹き出し */
+.content1,
+.content2 {
+    width: 80%;
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0 1.5em 15px;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: rgba(252, 201, 119, 0.5);
+    border-radius: 15px;
+    text-align: left;
+}
+
+.content1:before,
+.content2:before {
+    content: "";
+    position: absolute;
+    margin-top: -15px;
+}
+
+.content1:before {
+    top: 60%;
+    left: -30px;
+    border: 15px solid transparent;
+    border-right: 15px solid rgba(252, 201, 119, 0.5);
+}
+
+.content2:before {
+    top: 60%;
+    right: -30px;
+    border: 15px solid transparent;
+    border-left: 15px solid rgba(252, 201, 119, 0.5);
+}
+
+.content1 p,
+.content2 p {
+    padding: 16px;
+}
+
+
+/* staff紹介 */
+.textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.more {
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.more p {
+    text-align: center;
+    letter-spacing: 0.5em;
+    color: navy;
+    font-weight: bold;
+    background: rgba(252, 201, 119);
+    border-radius: 16px;
+    border: 3px dashed navy;
+}
+
+.staffbox {
+    text-align: center;
+    position: relative;
+}
+
+.staffbox img {
+    width: 150px;
+    margin-top: 4px;
+}
+
+.staffcontentbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(252, 201, 119, 0.5);
+    justify-content: space-between;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.staffcontent {
+    width: 200px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    margin: 8px;
+}
+
+/* COURSE */
+
+
+
+.coursebox {
+    display: flex;
+    justify-content: space-between;
+    height: 40vh;
+    margin-bottom: 32px;
+}
+
+.coursecontent {
+    border: 3px solid navy;
+    width: 35%;
+    display: flex;
+    align-items: flex-end;
+    margin: 24px;
+    border-radius: 16px;
+    box-shadow: 4px 4px 40px -8px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.coursecontent:nth-child(1) {
+    background: url(./img/design1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.coursecontent:nth-child(2) {
+    background: url(./img/design2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.coursecontent:nth-child(3) {
+    background: url(./img/design3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.coursecontentbox h2 {
+    margin: 8px;
+    font-size: 24px;
+    margin: 24px;
+    background: rgba(249, 250, 251, 0.8);
+    border-radius: 16px;
+}
+
+/*モーダル本体の指定 + モーダル外側の背景の指定*/
+.modal-container1,
+.modal-container2,
+.modal-container3 {
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 100vh;
+    text-align: center;
+    background: rgba(0, 0, 0, 50%);
+    padding: 40px 20px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+    box-sizing: border-box;
+}
+
+/*モーダル本体の擬似要素の指定*/
+.modal-container1:before,
+.modal-container2:before,
+.modal-container3:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 90%;
+}
+
+/*モーダル本体に「active」クラス付与した時のスタイル*/
+.modal-container1.active,
+.modal-container2.active,
+.modal-container3.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*モーダル枠の指定*/
+.modal-body {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    top: 10%;
+    width: 90%;
+}
+
+/*モーダルを閉じるボタンの指定*/
+.modal-close1,
+.modal-close2,
+.modal-close3{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -40px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*モーダル内のコンテンツの指定*/
+.modal-content {
+    background: #fff;
+    text-align: left;
+    padding: 30px;
+    width: 100%;
+    border: 2px solid navy;
+}
+
+
+.toptextbox {
+display: flex;
+flex-direction: column;
+text-align: center;
+} 
+
+.text1 {
+    width: 100%;
+}
+
+.iconbox {
+    background: rgba(252, 201, 119, 0.5);
+    border-radius: 16px;
+}
+
+.iconbox img {
+    width: 10%;
+    margin: 8px;
+}
+
+/* access */
+.access {
+    height: 100vh;
+}
+
+.access a {
+    text-decoration: none;
+    color: orangered;
+    font-size: 40px;
+    margin: 24px 0 0 16px;
+}
